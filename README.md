@@ -10,7 +10,7 @@ This repository contains code for a web application that can scrape job listings
 
 ```
 $ git clone https://github.com/MOUAD-FAKIHI/injobs-scraper.git
-$ injobs-scraper
+$ cd injobs-scraper
 ```
 
 ### 2. Run Backend
