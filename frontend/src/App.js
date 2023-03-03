@@ -15,7 +15,7 @@ function App() {
             <LinkContainer to="/">
               <Navbar.Brand href="#home">
                 <img
-                  width="80px"
+                  width="60px"
                   height="auto"
                   src={injobs}
                   className="img-responsive"

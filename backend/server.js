@@ -8,7 +8,7 @@ async function getJobs(jobTitle, location) {
     searchLocation = location;
   try {
     let jobId = 0;
-    for (let pageNumber = 0; pageNumber < 500; pageNumber += 25) {
+    for (let pageNumber = 0; pageNumber < 100; pageNumber += 25) {
       const jobsUrl = `https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=${serachKeywords}&location=${searchLocation}&trk=public_jobs_jobs-search-bar_search-submit&position=1&pageNum=0&start=${pageNumber}`;
       const { data } = await axios.get(jobsUrl);
       const $ = cheerio.load(data);
