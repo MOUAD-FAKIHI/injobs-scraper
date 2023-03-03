@@ -2,7 +2,7 @@
 
 ## LinkedIn Jobs Scraper with React and NodeJS
 
-This repository contains code for a web application that can scrape job listings from LinkedIn and display them to the user. The application is built using React for the front-end and NodeJS for the back-end.
+This is a web scraping tool designed to extract job postings from LinkedIn using React and NodeJS. The tool allows users to enter search terms and extract relevant job postings, and allows them to upload the search result as a csv file.
 
 ## Run Locally
 
