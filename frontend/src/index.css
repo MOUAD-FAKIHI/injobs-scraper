@@ -11,6 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* nav bar */
+.navbar .nav-item .nav-link{
+  font-weight: 700;
+  color: #0072B1;
+}
 /* spinner color */
 .spinnerColor{
   color: #0072B1;

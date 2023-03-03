@@ -2,8 +2,9 @@ import SearchScreen from './screens/SearchScreen';
 import JobsListSceen from './screens/JobsListSceen';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Container, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import injobs from './assets/logos/injobslogo.png';
+import { useState } from 'react';
 
 function App() {
   return (
@@ -29,7 +30,10 @@ function App() {
         <Container fluid className="p-5">
           <Routes>
             <Route path="/" element={<SearchScreen />} />
-            <Route path="/jobslist/:jobtitle/:location" element={<JobsListSceen />} />
+            <Route
+              path="/jobslist/:jobtitle/:location"
+              element={<JobsListSceen />}
+            />
           </Routes>
         </Container>
       </main>

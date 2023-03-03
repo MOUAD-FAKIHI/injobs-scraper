@@ -6,6 +6,7 @@ import Table from 'react-bootstrap/Table';
 import { Link, useParams } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { CSVLink } from 'react-csv';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -59,7 +60,7 @@ export default function JobsListSceen() {
     <div className="searchResultsStyle">
       <div className="mb-2 d-flex justify-content-between">
         <h2>Search results</h2>
-        <div>
+        <div className="d-flex">
           <CSVLink
             filename={'injobs.csv'}
             separator={';'}
@@ -70,6 +71,11 @@ export default function JobsListSceen() {
               <i className="fa-solid fa-file-excel"></i> Upload
             </Button>
           </CSVLink>
+          <LinkContainer className="btnStyle ms-2" to="/">
+            <div className="btnStyle">
+              <Button type="submit">Back to search</Button>
+            </div>
+          </LinkContainer>
         </div>
       </div>
       {loading ? (
