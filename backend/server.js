@@ -44,9 +44,9 @@ async function getJobs(jobTitle, location) {
           Offer: offer,
           Company: company,
           Location: location,
-          State: state ? state : '---',
-          Salary: salary ? salary : '---',
-          Date: jobDate ? jobDate : '---',
+          State: state ? state : 'N/A',
+          Salary: salary ? salary : 'N/A',
+          Date: jobDate ? jobDate : 'N/A',
           Link: link,
         });
       });
