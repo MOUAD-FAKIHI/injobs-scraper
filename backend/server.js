@@ -1,16 +1,22 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const express = require('express');
+const rateLimit = require('axios-rate-limit');
 
 async function getJobs(jobTitle, location) {
+  const http = rateLimit(axios.create(), {
+    maxRequests: 20,
+    perMilliseconds: 1000,
+    maxRPS: 20,
+  });
   let allJobOffers = [];
   let serachKeywords = jobTitle,
     searchLocation = location;
   try {
     let jobId = 0;
-    for (let pageNumber = 0; pageNumber < 100; pageNumber += 25) {
+    for (let pageNumber = 0; pageNumber < 400; pageNumber += 25) {
       const jobsUrl = `https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=${serachKeywords}&location=${searchLocation}&trk=public_jobs_jobs-search-bar_search-submit&position=1&pageNum=0&start=${pageNumber}`;
-      const { data } = await axios.get(jobsUrl);
+      const { data } = await http.get(jobsUrl);
       const $ = cheerio.load(data);
       const jobs = $('li');
       jobs.each((index, element) => {
@@ -53,7 +59,7 @@ async function getJobs(jobTitle, location) {
     }
     return allJobOffers;
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
   }
 }
 

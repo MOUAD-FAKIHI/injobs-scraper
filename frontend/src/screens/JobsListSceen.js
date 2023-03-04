@@ -97,7 +97,7 @@ export default function JobsListSceen() {
               </tr>
             </thead>
             <tbody>
-              {jobOffers.map((jobOffer) => (
+              {jobOffers && jobOffers.map((jobOffer) => (
                 <tr key={jobOffer.Id}>
                   <td>{jobOffer.Offer}</td>
                   <td>{jobOffer.Company}</td>
